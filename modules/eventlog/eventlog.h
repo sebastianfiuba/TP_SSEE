@@ -7,8 +7,44 @@
 
 
 //=====[Declaration of public data types]======================================
-
+struct log_t{
+  bool but1; 
+  bool but2;
+  bool led1;
+  bool led2;
+  bool lock;  
+  bool changes;
+  float temp;
+  int hum;
+}
 //=====[Declarations (prototypes) of public functions]=========================
+/*
+ init all in 0 locked 
+*/
+void initLog(log_t *eventlog);
+
+/*
+true if dif
+false if dif
+  */
+bool checkLogButtons(const log_t firstcomp, const log_t seccomp);
+
+void makeLogButtons(log_t *logbuttons, const bool but1, const bool but2);
+
+void updateLogButtons(log_t *logsource, log_t *logobj);
+
+/*
+true if dif
+false if dif
+*/
+
+bool checkChangesLockLog(log_t *locklogcheck, const bool state);
+
+void updateLogLock(log_t *locklogupd, const bool statelock);
+
+
+
+
 
 //=====[#include guards - end]=================================================
 
