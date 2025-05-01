@@ -21,28 +21,29 @@
 
 //=====[Declarations (prototypes) of private functions]========================
 
-bool debounceButtons(log_t check){
+bool debounceButtons(log_t *check){
 
   
     delay(DEBOUNCE_TIME_MS);
 
-    log_t second = readButtons();
+    log_t second;
+  
+    readButtons(*second);
 
-    if(checkLogButtons(check, second))
-      return false
 
-    return true
+    return !checkLogButtons(&check, second)
 
 }
 
-log_t readButtons(){
+void readButtons(log_t *readlog){
 
     bool button1 = ;
 
     bool button2 = ;
     
-    return updateLogButtons(FALSE ,button1, button2);
+    makeLogButtons(readlog, button1, button2);
 
+    return
 }
 
 
@@ -53,11 +54,13 @@ log_t readButtons(){
 
 void updateButtons(log_t* events){
 
-  log_t first = readButtons();
+  log_t first_aux;
+  initLog(*first_aux);
+  readButtons(*first_aux);
 
-    if (checkLogButtons(first, events))
-      if (debounceButtons(first))
-        updateLogButtons(TRUE, first, events);
+    if (checkLogButtons(first_aux, &events))
+      if (debounceButtons(*first_aux))
+        updateLogButtons(*first_aux, events);
     
   return
 }
