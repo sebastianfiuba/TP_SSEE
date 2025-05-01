@@ -7,7 +7,10 @@
 
 //=====[Declaration of public data types]======================================
 
+
 //=====[Declarations (prototypes) of public functions]=========================
+
+void updateButtons(log_t *events);
 
 //=====[#include guards - end]=================================================
 
