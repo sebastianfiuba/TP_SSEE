@@ -11,6 +11,7 @@
 
 //=====[Declarations (prototypes) of public functions]=========================
 
+void updateLock(log_t *locklog);
 
 //=====[#include guards - end]=================================================
 
