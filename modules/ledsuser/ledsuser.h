@@ -9,7 +9,7 @@
 //=====[Declaration of public data types]======================================
 
 //=====[Declarations (prototypes) of public functions]=========================
-
+void updateUserleds(log_t *led);
 //=====[#include guards - end]=================================================
 
 #endif // _LEDSUSER_H_
