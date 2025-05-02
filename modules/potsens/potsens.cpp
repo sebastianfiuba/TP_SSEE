@@ -35,9 +35,9 @@ AnalogIn limitPot(A0);
 
 void updateSens(log_t* sens){
   
-  int limitTemp_ant = getSens(sens);
+  int limitTemp_ant = getSensLog(sens);
   float potReading    = limitPot.read();
-  limitTemp  = (int)(potReading * (MAX_TEMP - BASE_TEMP) + BASE_TEMP);
+  int limitTemp  = (int)(potReading * (MAX_TEMP - BASE_TEMP) + BASE_TEMP);
 
   if (limitTemp_ant != limitTemp)
     updateSensLog(sens,limitTemp);
