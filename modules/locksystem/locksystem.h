@@ -10,9 +10,9 @@
 //=====[Declaration of public data types]======================================
 
 //=====[Declarations (prototypes) of public functions]=========================
-void lockSysInit();
+void locksysInit();
 
-void lockSysUpdate();
+void locksysUpdate();
 
 //=====[#include guards - end]=================================================
 
