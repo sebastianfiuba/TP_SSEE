@@ -25,10 +25,10 @@ static void changeLeds(bool statelock);
 
 //=====[Implementations of public functions]===================================
 
-void initUserLeds(log_t* ledlog){
+void initUserLeds(){
 
   changeLeds(INIT_LOCK_VALUE);
-  updateLedsLog(led, INIT_LOCK_VALUE);
+  
   return;
   
 }
