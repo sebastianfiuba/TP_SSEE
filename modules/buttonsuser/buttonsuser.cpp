@@ -20,31 +20,8 @@
 //=====[Declaration and initialization of private global variables]============
 
 //=====[Declarations (prototypes) of private functions]========================
-
-bool debounceButtons(log_t *check){
-
-  
-    delay(DEBOUNCE_TIME_MS);
-
-    log_t second;
-  
-    readButtons(*second);
-
-
-    return !checkLogButtons(&check, second)
-
-}
-
-void readButtons(log_t *readlog){
-
-    bool button1 = ;
-
-    bool button2 = ;
-    
-    makeLogButtons(readlog, button1, button2);
-
-    return
-}
+bool debounceButtons(log_t* check);
+void readButtons(log_t* readlog);
 
 
 
@@ -66,5 +43,30 @@ void updateButtons(log_t* events){
 }
 
 
+//=====[Implementations of private functions]==================================
 
+static bool debounceButtons(log_t* check){
+
+  
+    delay(DEBOUNCE_TIME_MS);
+
+    log_t second;
+  
+    readButtons(*second);
+
+
+    return !checkLogButtons(&check, second)
+
+}
+
+static void readButtons(log_t* readlog){
+
+    bool button1 = ;
+
+    bool button2 = ;
+    
+    makeLogButtons(readlog, button1, button2);
+
+    return
+}
 
