@@ -4,7 +4,7 @@
 #include "arm_book_lib.h"
 
 #include "serialcom.h"
-#include "tempsensor.h"
+#include "realtime.h"
 #include "eventlog.h"
 
 //=====[Declaration of private defines]========================================
@@ -176,7 +176,7 @@ static void commandShowCurrentHum(const log_t* log){
 
 static void commandShowCurrentSens(const log_t* log){
   char str[100] = "";
-  sprintf ( str, "The minimum temperature is %d \xB0 C and the maximum temperature is %d \xB0 C\r\n", MIN ,getSensLog(log) );
+  sprintf ( str, "The minimum temperature is %d \xB0 C and the maximum temperature is %d \xB0 C\r\n", LOW_LIMIT_TEMP ,getSensLog(log) );
   pcSerialComStringWrite( str );  
 }
 static void commandOpenLock(log_t* log){
