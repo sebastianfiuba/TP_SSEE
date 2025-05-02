@@ -19,6 +19,38 @@
 //=====[Declaration and initialization of private global variables]============
 
 //=====[Declarations (prototypes) of private functions]========================
+static void sendStartSignal(dht11_t* sensor);
+static bool waitForResponse(dht11_t* sensor);
+static bool readBit(dht11_t* sensor);
+static uint8_t readByte(dht11_t* sensor);
+static bool dht11Read(dht11_t* sensor);
+static int getSensorTemp(dht11_t* sensor);
+static int getSensorHum(dht11_t* sensor);
+//=====[Implementations of public functions]===================================
+
+void initSensor(dht11_t* sensor, PinName pin) {
+  sensor->pin = pin;
+  sensor->data = new DigitalInOut(pin);
+  sensor->temperature = 0;
+  sensor->humidity = 0;
+  return
+}
+
+void updateSensor(log_t* sensorlog, dht11_t* sensor1){
+
+  if(!dht11Read(sensor1))
+    return
+
+  updateTempLog(sensorlog, getSensorTemp(sensor1));
+  updateHumLog(sensorlog, getSensorHum(sensor1));
+  
+  return
+    
+}
+// Send start signal: pull line low for 18 ms, then high
+
+//=====[Implementations of private functions]==================================
+
 static void sendStartSignal(dht11_t* sensor){
   sensor->data->output();
   sensor->data->write(0);
@@ -102,27 +134,4 @@ static int getSensorTemp(dht11_t* sensor){
 static int getSensorHum(dht11_t* sensor){
   return sensor->humidity;
 }
-//=====[Implementations of public functions]===================================
-
-void initSensor(dht11_t* sensor, PinName pin) {
-  sensor->pin = pin;
-  sensor->data = new DigitalInOut(pin);
-  sensor->temperature = 0;
-  sensor->humidity = 0;
-  return
-}
-
-void updateSensor(log_t* sensorlog, dht11_t* sensor1){
-
-  if(!dht11Read(sensor1))
-    return
-
-  updateTempLog(sensorlog, getSensorTemp(sensor1));
-  updateHumLog(sensorlog, getSensorHum(sensor1));
-  
-  return
-    
-}
-// Send start signal: pull line low for 18 ms, then high
-
 
