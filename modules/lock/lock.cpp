@@ -51,6 +51,8 @@ void changeLock(bool state){
   return;
 }
 
+//=====[Implementations of private functions]==================================
+
 static bool checkLockConditions(log_t* lock){
 
   if(getBut1Log(lock)) // open
