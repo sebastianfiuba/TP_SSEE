@@ -3,11 +3,11 @@
 /* code */
 int main(){
 
-  systemInit();
+  locksysInit();
 
   while(true){
 
-  systemUpdate();
+    locksysUpdate();
 
   }
   
