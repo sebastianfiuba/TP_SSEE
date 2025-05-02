@@ -82,6 +82,7 @@ bool checkChangesLockLog(const log_t* locklogcheck, const bool state){
 void updateLogLock(log_t* locklogupd, const bool statelock){
 
   locklogupd->lock = statelock;
+  updateChangesLog(locklogupd, true);
   
   return;
 }
