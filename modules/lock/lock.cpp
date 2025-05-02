@@ -8,8 +8,7 @@
 //=====[Declaration of private defines]========================================
 
 #define HIGH_LIMIT_HUM 80
-#define OPEN_VALUE false
-#define CLOSED_VALUE true
+
 //=====[Declaration of private data types]=====================================
 
 //=====[Declaration and initialization of public global objects]===============
