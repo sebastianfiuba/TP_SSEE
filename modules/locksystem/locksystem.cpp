@@ -5,7 +5,7 @@
 #include "mbed.h"
 
 #include "eventlog.h"
-#include "buttonuse.h"
+#include "buttonsuser.h"
 #include "ledsuser.h"
 #include "lock.h"
 #include "potsens.h"
