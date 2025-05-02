@@ -9,9 +9,9 @@
 
 //=====[Declarations (prototypes) of public functions]=========================
 
-char* dateAndTimeRead();
+char* rtcRead();
 
-void dateAndTimeWrite( int year, int month, int day, 
+void rtcWrite( int year, int month, int day, 
                        int hour, int minute, int second );
 
 //=====[#include guards - end]=================================================
