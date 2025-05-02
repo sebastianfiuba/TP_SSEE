@@ -7,7 +7,7 @@
 #include "eventlog.h"
 #include "potsens.h"
 #include "ledsuser.h"
-#include "buttonsuser.cpp"
+#include "buttonsuser.h"
 
 
 //=====[Declaration of private defines]========================================
