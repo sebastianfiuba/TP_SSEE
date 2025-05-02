@@ -49,7 +49,7 @@ void updateTempLog(log_t* sensorlog, int temp);
 void updateHumLog(log_t* sensorlog, int hum);
 void updateLedsLog(log_t* ledslog, bool statelog);
 void updateSensLog(log_t* sensorlog, int sens);
-}
+
 bool getBut1Log(const log_t* elog);
 bool getBut2Log(const log_t* elog);
 bool getLed1Log(const log_t* elog);
