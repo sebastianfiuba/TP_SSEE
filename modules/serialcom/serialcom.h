@@ -16,10 +16,6 @@ void pcSerialComStringWrite(const char* str);
 
 void pcSerialComUpdate(log_t* loga);
 
-bool pcSerialComCodeCompleteRead();
-
-void pcSerialComCodeCompleteWrite(bool state);
-
 
 //=====[#include guards - end]=================================================
 
