@@ -5,13 +5,14 @@
 
 //=====[Declaration of public defines]=========================================
 
-//#define SYSTEM_TIME_INCREMENT_MS   10
+#define INIT_LOCK_VALUE true
 
 //=====[Declaration of public data types]======================================
 
 //=====[Declarations (prototypes) of public functions]=========================
-
+void initLock();
 void updateLock(log_t *locklog);
+void changeLock(bool state);
 
 //=====[#include guards - end]=================================================
 
