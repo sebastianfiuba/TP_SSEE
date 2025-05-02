@@ -10,8 +10,8 @@
 
 //=====[Declarations (prototypes) of public functions]=========================
 
-userInterfaceInit();
-userInterfaceUpdate(log_t* loginter);
+void userInterfaceInit();
+void userInterfaceUpdate(log_t* loginter);
 
 //=====[#include guards - end]=================================================
 
