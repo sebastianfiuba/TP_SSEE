@@ -87,6 +87,13 @@ void updateLogLock(log_t* locklogupd, const bool statelock){
 }
 
 
+void updateSensLog(log_t* sensorlog, int sens){
+
+  sensorlog->sens = sens;
+  
+  return;
+}
+
 void updateTempLog(log_t* sensorlog, int temp){
 
   sensorlog->temp = temp;
