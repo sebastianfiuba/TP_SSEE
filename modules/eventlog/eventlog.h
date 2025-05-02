@@ -7,7 +7,7 @@
 
 
 #define INIT_LOCK_VALUE true
-
+#define LOW_LIMIT_TEMP 15
 
 //=====[Declaration of public data types]======================================
 typedef struct{
