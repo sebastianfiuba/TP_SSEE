@@ -61,13 +61,15 @@ void pcSerialComStringWrite(const char* str){
   return;
 }
 
-void pcSerialComUpdate(log_t* log_a){
+void pcSerialComUpdate(log_t* loga){
   char receivedChar = pcSerialComCharRead();
   if( receivedChar != '\0' ) {
-    pcSerialComCommandUpdate(receivedChar, log_a);
+    pcSerialComCommandUpdate(receivedChar, loga);
   }    
-  if(getChangesFlagLog(log_a))
-    commandShowCurrentLog(log);
+  if(getChangesFlagLog(loga)){
+    commandShowCurrentLog(loga);
+    updateChangesLog(loga, false);
+  }
   return;
 }
 
