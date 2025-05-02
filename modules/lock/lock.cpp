@@ -20,9 +20,9 @@
 //=====[Declarations (prototypes) of private functions]========================
 bool checkLockConditions(log_t *lock){
 
-  if(getBut1(lock))
+  if(getBut1Log(lock))
     return false
-  if(getBut2(lock))
+  if(getBut2Log(lock))
     return true
   float sens_aux = getSensLog(lock);
   float temp_aux = getTempLog(lock);
