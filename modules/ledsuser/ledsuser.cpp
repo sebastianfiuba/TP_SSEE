@@ -49,7 +49,7 @@ void updateUserleds(log_t* led){
 
 static void changeLeds(bool statelock){
 
-  opendLed = !statelock;
+  openLed = !statelock;
   closedLed = statelock;
   return;
 }
