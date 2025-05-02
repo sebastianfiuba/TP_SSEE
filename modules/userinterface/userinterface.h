@@ -10,6 +10,8 @@
 
 //=====[Declarations (prototypes) of public functions]=========================
 
+userInterfaceInit();
+userInterfaceUpdate();
 
 //=====[#include guards - end]=================================================
 
