@@ -40,7 +40,7 @@ void updateLock(log_t* locklog){
 
   if(changeslock){
     changeLock(statelock);
-    updateLogLock(lockloga, statelock); //changes true
+    updateLogLock(locklog, statelock); //changes true
   }
   return;
 }
