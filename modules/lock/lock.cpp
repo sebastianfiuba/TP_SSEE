@@ -36,7 +36,7 @@ void updateLock(log_t* locklog){
   
   bool statelock = checkLockConditions(locklog);
 
-  bool changeslock = checkChangesLockLog(locklog, stateLock);
+  bool changeslock = checkChangesLockLog(locklog, statelock);
 
   if(changeslock){
     changeLock(statelock);
