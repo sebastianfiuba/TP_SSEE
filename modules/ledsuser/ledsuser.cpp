@@ -10,6 +10,9 @@
 
 //=====[Declaration and initialization of public global objects]===============
 
+DigitalOut openLed(LED2);
+DigitalOut closedLed(LED3);
+
 //=====[Declaration of external public global variables]=======================
 
 //=====[Declaration and initialization of public global variables]=============
@@ -18,12 +21,33 @@
 
 //=====[Declarations (prototypes) of private functions]========================
 
+static void changeLeds(bool statelock);
+
 //=====[Implementations of public functions]===================================
+
+void initUserLeds(log_t* ledlog){
+
+  changeLeds(INIT_LOCK_VALUE);
+  updateLedsLog(led, INIT_LOCK_VALUE);
+  return;
+  
+}
+
 void updateUserleds(log_t* led){
   bool state = getLockLog(led);
   if(getChangesFlagLog(led)){
-
+    changeLeds(state);
+    updateLedsLog(led, state);
   }
-  return
+  return;
 }
 
+
+//=====[Implementations of private functions]==================================
+
+static void changeLeds(bool statelock){
+
+  opendLed = !statelock;
+  closedLed = statelock;
+  return;
+}
