@@ -16,6 +16,7 @@ struct log_t{
   bool changes;
   float temp;
   int hum;
+  float sens;
 }
 //=====[Declarations (prototypes) of public functions]=========================
 /*
@@ -43,7 +44,13 @@ bool checkChangesLockLog(log_t *locklogcheck, const bool state);
 void updateLogLock(log_t *locklogupd, const bool statelock);
 
 
-
+bool getBut1(log_t *log);
+bool getBut2(log_T *log);
+float getSensLog(log_t *log);
+float getTempLog(log_t *log);
+int getHumLog(log_t *log);
+bool getLockLog(log_t *log);
+bool getChangesFlagLog(log_t *log);
 
 
 //=====[#include guards - end]=================================================
