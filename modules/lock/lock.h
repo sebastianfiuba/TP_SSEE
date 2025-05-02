@@ -4,7 +4,8 @@
 #define _LOCK_H_
 
 //=====[Declaration of public defines]=========================================
-
+#define OPEN_VALUE false
+#define CLOSED_VALUE true
 //=====[Declaration of public data types]======================================
 
 //=====[Declarations (prototypes) of public functions]=========================
