@@ -20,8 +20,8 @@
 //=====[Declaration and initialization of private global variables]============
 
 //=====[Declarations (prototypes) of private functions]========================
-bool debounceButtons(log_t* check);
-void readButtons(log_t* readlog);
+static bool debounceButtons(log_t* check);
+static void readButtons(log_t* readlog);
 
 
 
