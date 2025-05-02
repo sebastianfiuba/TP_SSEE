@@ -11,7 +11,7 @@
 //=====[Declarations (prototypes) of public functions]=========================
 
 userInterfaceInit();
-userInterfaceUpdate();
+userInterfaceUpdate(log_t* loginter);
 
 //=====[#include guards - end]=================================================
 
