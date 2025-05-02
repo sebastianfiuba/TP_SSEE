@@ -10,6 +10,7 @@
 
 //=====[Declarations (prototypes) of public functions]=========================
 
+void initButtons();
 void updateButtons(log_t *events);
 
 //=====[#include guards - end]=================================================
