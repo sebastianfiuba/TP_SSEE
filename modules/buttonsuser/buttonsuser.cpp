@@ -5,6 +5,7 @@
 #include "mbed.h"
 
 #include "eventlog.h"
+#include "buttonsuser.h"
 
 
 //=====[Declaration of private defines]========================================
