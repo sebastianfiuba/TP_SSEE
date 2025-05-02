@@ -6,7 +6,7 @@
 #include "lock.h"
 
 //=====[Declaration of private defines]========================================
-#define LOW_LIMIT_TEMP 15
+
 #define HIGH_LIMIT_HUM 80
 #define OPEN_VALUE false
 #define CLOSED_VALUE true
