@@ -3,6 +3,7 @@
 #include "arm_book_lib.h"
 #include "mbed.h"
 #include "eventlog.h"
+#include "lock.h"
 
 //=====[Declaration of private defines]========================================
 #define LOW_LIMIT_TEMP 15
