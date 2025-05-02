@@ -33,18 +33,18 @@ void initSensor(dht11_t* sensor, PinName pin) {
   sensor->data = new DigitalInOut(pin);
   sensor->temperature = 0;
   sensor->humidity = 0;
-  return
+  return;
 }
 
 void updateSensor(log_t* sensorlog, dht11_t* sensor1){
 
   if(!dht11Read(sensor1))
-    return
+    return;
 
   updateTempLog(sensorlog, getSensorTemp(sensor1));
   updateHumLog(sensorlog, getSensorHum(sensor1));
   
-  return
+  return;
     
 }
 // Send start signal: pull line low for 18 ms, then high
@@ -58,7 +58,7 @@ static void sendStartSignal(dht11_t* sensor){
   sensor->data->write(1);
   wait_us(30);    // Wait for DHT11 response
   sensor->data->input();
-  return
+  return;
 }
 
 
