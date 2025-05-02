@@ -24,8 +24,8 @@ bool checkLockConditions(log_t *lock){
     return false
   if(getBut2Log(lock))
     return true
-  float sens_aux = getSensLog(lock);
-  float temp_aux = getTempLog(lock);
+  int sens_aux = getSensLog(lock);
+  int temp_aux = getTempLog(lock);
   if(LOW_LIMIT_TEMP >= temp_aux <= sens_aux)
     return true
   int hum = getHumLog(lock);
