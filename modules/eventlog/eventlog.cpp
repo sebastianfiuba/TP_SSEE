@@ -107,6 +107,14 @@ void updateHumLog(log_t* sensorlog, int hum){
   
   return;
 }
+
+void updateChangesLog(log_t* changelog, bool statechanges){
+
+  sensorlog->changes = statechanges;
+  
+  return;
+}
+
 bool getBut1Log(const log_t* elog){
   
   return elog->but1;
