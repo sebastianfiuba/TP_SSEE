@@ -5,7 +5,7 @@
 
 //=====[Declaration of public defines]=========================================
 
-#define INIT_LOCK_VALUE true
+
 
 //=====[Declaration of public data types]======================================
 typedef struct{
