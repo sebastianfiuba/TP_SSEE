@@ -67,4 +67,5 @@ static bool checkLockConditions(log_t* lock){
   int hum = getHumLog(lock);
   if(hum >= HIGH_LIMIT_HUM)
     return OPEN_VALUE;
+  return getLockLog(lock);
 }
