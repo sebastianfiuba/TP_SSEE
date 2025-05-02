@@ -29,11 +29,6 @@ true if dif
 false if dif
   */
 bool checkLogButtons(const log_t* firstcomp, const log_t* seccomp);
-
-void makeLogButtons(log_t* logbuttons, const bool but1, const bool but2);
-
-void updateLogButtons(log_t* logsource, log_t* logobj);
-
 /*
 true if dif
 false if dif
@@ -41,12 +36,16 @@ false if dif
 
 bool checkChangesLockLog(const log_t* locklogcheck, const bool state);
 
+
+
+void makeLogButtons(log_t* logbuttons, const bool but1, const bool but2);
+
+void updateLogButtons(log_t* logsource, log_t* logobj);
 void updateLogLock(log_t* locklogupd, const bool statelock);
-
-
 void updateTempLog(log_t* sensorlog, int temp);
 void updateHumLog(log_t* sensorlog, int hum);
-  
+void updateLedsLog(log_t* ledslog, bool statelog);
+
 
 bool getBut1Log(const log_t* elog);
 bool getBut2Log(const log_t* elog);
