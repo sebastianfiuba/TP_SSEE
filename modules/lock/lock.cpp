@@ -25,11 +25,9 @@ DigitalOut lockOut(LED1);
 static bool checkLockConditions(log_t* lock);
 //=====[Implementations of public functions]===================================
 
-void initLock(log_t* loglock){
+void initLock(){
 
   changeLock(INIT_LOCK_VALUE);
-  updateLogLock(lockloga, INIT_LOCK_VALUE);
-  
 }
 
 void updateLock(log_t* locklog){
