@@ -2,7 +2,7 @@
 
 #include "arm_book_lib.h"
 #include "mbed.h"
-#include "sensor.h"
+#include "tempsensor.h"
 #include "eventlog.h"
 
 
