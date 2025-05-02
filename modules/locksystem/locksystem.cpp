@@ -4,6 +4,7 @@
 
 #include "mbed.h"
 
+#include "locksystem.h"
 #include "eventlog.h"
 #include "buttonsuser.h"
 #include "ledsuser.h"
