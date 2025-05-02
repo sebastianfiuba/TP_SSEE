@@ -4,7 +4,7 @@
 #include "arm_book_lib.h"
 
 #include "eventlog.h"
-
+#include "potsens.h"
 
 
 //=====[Declaration of private defines]========================================
