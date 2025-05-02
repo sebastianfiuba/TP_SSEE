@@ -19,7 +19,7 @@
 //=====[Declarations (prototypes) of private functions]========================
 
 //=====[Implementations of public functions]===================================
-void updateUserleds(log_t *led){
+void updateUserleds(log_t* led){
   bool state = getLockLog(led);
   if(getChangesFlagLog(led)){
 
