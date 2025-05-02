@@ -6,6 +6,7 @@
 #include "serialcom.h"
 #include "realtime.h"
 #include "eventlog.h"
+#include "lock.h"
 
 //=====[Declaration of private defines]========================================
 
@@ -70,14 +71,6 @@ void pcSerialComUpdate(log_t* log_a){
   return;
 }
 
-bool pcSerialComCodeCompleteRead(){
-  return codeComplete;
-}
-
-void pcSerialComCodeCompleteWrite(bool state){
-  codeComplete = state;
-  return;
-}
 
 //=====[Implementations of private functions]==================================
 
@@ -88,6 +81,7 @@ static void pcSerialComStringRead(char* str, int strLength){
     uartUsb.write( &str[strIndex] ,1 );
   }
   str[strLength]='\0';
+  return;
 }
 
 
@@ -106,6 +100,7 @@ static void pcSerialComCommandUpdate(char receivedChar, log_t* log){
     case 'l': case 'L': commandShowCurrentLog(log); break;
     default: availableCommands(); break;
     } 
+  return;
 }
 
 static void availableCommands(){
@@ -122,6 +117,7 @@ static void availableCommands(){
   pcSerialComStringWrite( "Press 'd' or 'D' to get the date and time\r\n" );
   pcSerialComStringWrite( "Press 'l' or 'L' to get the current log update\r\n" );
   pcSerialComStringWrite( "\r\n" );
+  return;
 }
 
 static void commandShowCurrentLockState(const log_t* log){
@@ -131,6 +127,7 @@ static void commandShowCurrentLockState(const log_t* log){
   else{
       pcSerialComStringWrite( "The lock is closed\r\n");
   }
+  return;
 }
 static void commandShowCurrentButtonsState(const log_t* log){
   if (getBut1Log(log)){
@@ -144,6 +141,7 @@ static void commandShowCurrentButtonsState(const log_t* log){
   }
   else{
     pcSerialComStringWrite( "The button 2 is not pressed\r\n");
+  return;
 }
 
 static void commandShowCurrentLedsState(const log_t* log){
@@ -158,7 +156,8 @@ static void commandShowCurrentLedsState(const log_t* log){
   }
   else{
     pcSerialComStringWrite( "The Led 2 is off\r\n");
-}
+  }
+  return;
 }
 
 
@@ -166,24 +165,31 @@ static void commandShowCurrentTemp(const log_t* log){
   char str[100] = "";
   sprintf ( str, "Temperature: %d \xB0 C\r\n", getTempLog(log) );
   pcSerialComStringWrite( str );  
+  return;
 }
 
 static void commandShowCurrentHum(const log_t* log){
   char str[100] = "";
   sprintf ( str, "Humidity: %d \xB0 C\r\n", getHumLog(log) );
   pcSerialComStringWrite( str );  
+  return;
 }
 
 static void commandShowCurrentSens(const log_t* log){
   char str[100] = "";
   sprintf ( str, "The minimum temperature is %d \xB0 C and the maximum temperature is %d \xB0 C\r\n", LOW_LIMIT_TEMP ,getSensLog(log) );
   pcSerialComStringWrite( str );  
+  return;
 }
 static void commandOpenLock(log_t* log){
-
-]
+  updateLogLock(log, OPEN_LOCK);
+  changeLock(OPEN_LOCK);
+  return;
+}
 static void commandCloseLock(log_t* log){
-
+  updateLogLock(log, CLOSE_LOCK);
+  changeLock(CLOSE_LOCK);
+  return;
 }
 
 static void commandSetDateAndTime(){
