@@ -7,17 +7,17 @@
 
 
 //=====[Declaration of public data types]======================================
-struct log_t{
+typedef struct{
   bool but1; 
   bool but2;
   bool led1;
   bool led2;
   bool lock;  
   bool changes;
-  float temp;
+  int temp;
   int hum;
-  float sens;
-}
+  int sens;
+}log_t;
 //=====[Declarations (prototypes) of public functions]=========================
 /*
  init all in 0 locked 
@@ -28,29 +28,35 @@ void initLog(log_t *eventlog);
 true if dif
 false if dif
   */
-bool checkLogButtons(const log_t firstcomp, const log_t seccomp);
+bool checkLogButtons(const log_t* firstcomp, const log_t* seccomp);
 
-void makeLogButtons(log_t *logbuttons, const bool but1, const bool but2);
+void makeLogButtons(log_t* logbuttons, const bool but1, const bool but2);
 
-void updateLogButtons(log_t *logsource, log_t *logobj);
+void updateLogButtons(log_t* logsource, log_t* logobj);
 
 /*
 true if dif
 false if dif
 */
 
-bool checkChangesLockLog(log_t *locklogcheck, const bool state);
+bool checkChangesLockLog(const log_t* locklogcheck, const bool state);
 
-void updateLogLock(log_t *locklogupd, const bool statelock);
+void updateLogLock(log_t* locklogupd, const bool statelock);
 
 
-bool getBut1(log_t *log);
-bool getBut2(log_T *log);
-float getSensLog(log_t *log);
-float getTempLog(log_t *log);
-int getHumLog(log_t *log);
-bool getLockLog(log_t *log);
-bool getChangesFlagLog(log_t *log);
+void updateTempLog(log_t* sensorlog, int temp);
+void updateHumLog(log_t* sensorlog, int hum);
+  
+
+bool getBut1Log(const log_t* elog);
+bool getBut2Log(const log_t* elog);
+bool getLed1Log(const log_t* elog);
+bool getLed2Log(const log_t* elog);
+int getSensLog(const log_t* elog);
+int getTempLog(const log_t* elog);
+int getHumLog(const log_t* elog);
+bool getLockLog(const log_t* elog);
+bool getChangesFlagLog(const log_t* elog);
 
 
 //=====[#include guards - end]=================================================
