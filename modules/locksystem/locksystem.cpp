@@ -31,7 +31,7 @@ dht11_t ths;
 
 //=====[Implementations of public functions]===================================
 
-void smartHomeSystemInit(){
+void  locksysInit(){
 
   userInterfaceInit();
   initLog(&sys);
@@ -40,7 +40,7 @@ void smartHomeSystemInit(){
   pcSerialComInit();
 }
 
-void smartHomeSystemUpdate(){
+void locksysUpdate(){
 
   userInterfaceUpdate(&sys);
   updateSensor(&sys, &ths);
