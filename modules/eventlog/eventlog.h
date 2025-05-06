@@ -8,6 +8,7 @@
 
 #define INIT_LOCK_VALUE true
 #define LOW_LIMIT_TEMP 15
+#define MAX_HUM 80
 
 //=====[Declaration of public data types]======================================
 typedef struct{
@@ -20,6 +21,7 @@ typedef struct{
   int temp;
   int hum;
   int sens;
+  bool manual;
 }log_t;
 //=====[Declarations (prototypes) of public functions]=========================
 /*
@@ -50,7 +52,9 @@ void updateHumLog(log_t* sensorlog, int hum);
 void updateLedsLog(log_t* ledslog, bool statelog);
 void updateSensLog(log_t* sensorlog, int sens);
 void updateChangesLog(log_t* changelog, bool statechanges);
+void updateManuallog(log_t* logupd, const bool state);
 
+bool getManualLog(const log_t* elog);
 bool getBut1Log(const log_t* elog);
 bool getBut2Log(const log_t* elog);
 bool getLed1Log(const log_t* elog);
