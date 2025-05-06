@@ -3,6 +3,7 @@
 #ifndef _LOCK_H_
 #define _LOCK_H_
 
+#include "eventlog.h"
 //=====[Declaration of public defines]=========================================
 #define OPEN_VALUE false
 #define CLOSED_VALUE true
