@@ -5,7 +5,8 @@
 
 //=====[Declaration of public defines]=========================================
 
-
+#include "eventlog.h"
+#include "ledsuser.h"
 //=====[Declaration of public data types]======================================
 
 //=====[Declarations (prototypes) of public functions]=========================
