@@ -1,9 +1,12 @@
 //=====[#include guards - begin]===============================================
-
 #ifndef _TEMPSENSOR_H_
 #define _TEMPSENSOR_H_
 
+#include "eventlog.h"
+#include "mbed.h"
+
 //=====[Declaration of public defines]=========================================
+
 
 typedef struct {
     PinName pin;
