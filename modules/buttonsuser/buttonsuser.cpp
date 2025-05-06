@@ -46,10 +46,11 @@ void updateButtons(log_t* events){
   log_t first_aux;
   initLog(&first_aux);
   readButtons(&first_aux);
-
-    if (checkLogButtons(&first_aux, events))
+  
+    if (!checkLogButtons(&first_aux, events))
       if (debounceButtons(&first_aux))
         updateLogButtons(&first_aux, events);
+  
     
   return;
 }
@@ -78,4 +79,3 @@ static void readButtons(log_t* readlog){
 
     return;
 }
-
