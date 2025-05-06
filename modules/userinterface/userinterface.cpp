@@ -49,18 +49,7 @@ void userInterfaceUpdate(log_t* loginter){
   updateSens(loginter);
 
   return;
-}
-
-
 
 }
 
 //=====[Implementations of private functions]==================================
-
-
-
-
-
-
-
-
