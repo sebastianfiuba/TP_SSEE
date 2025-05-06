@@ -24,14 +24,14 @@
 void initLog(log_t *eventlog){
   eventlog->but1 = false;
   eventlog->but2 = false;
-  eventlog->led1 = !INIT_LOCK_VALUE;
+  eventlog->led1 = !INIT_LOCK_VALUE; // open
   eventlog->led2 = INIT_LOCK_VALUE;
   eventlog->lock = INIT_LOCK_VALUE;
   eventlog->changes = false;
   eventlog->temp = 0;
   eventlog->hum = 0;
   eventlog->sens = 0;
-  
+  eventlog->manual = !INIT_LOCK_VALUE;
   return;
   
 }
@@ -43,10 +43,10 @@ false if dif
 bool checkLogButtons(const log_t* firstcomp, const log_t* seccomp){
 
   if(firstcomp->but1 != seccomp-> but1)
-    return true;
+    return false;
   if(firstcomp->but2 != seccomp-> but2)
-    return true;
-  return false;
+    return false;
+  return true;
 }
 
 void makeLogButtons(log_t* logbuttons, const bool but1, const bool but2){
@@ -87,13 +87,13 @@ void updateLogLock(log_t* locklogupd, const bool statelock){
   return;
 }
 
+void updateManuallog(log_t* logupd, const bool state){
 
-void updateSensLog(log_t* sensorlog, int sens){
-
-  sensorlog->sens = sens;
+  logupd->manual = state;
   
   return;
 }
+
 
 void updateTempLog(log_t* sensorlog, int temp){
 
@@ -108,12 +108,32 @@ void updateHumLog(log_t* sensorlog, int hum){
   
   return;
 }
+void updateSensLog(log_t* sensorlog, int sens){
+
+  sensorlog->sens = sens;
+  
+  return;
+}
+
+void updateLedsLog(log_t* ledslog, bool statelog){
+
+  ledslog->led1 = !statelog;
+  ledslog->led2 = statelog;
+  
+  return;
+}
 
 void updateChangesLog(log_t* changelog, bool statechanges){
 
-  sensorlog->changes = statechanges;
+  changelog->changes = statechanges;
   
   return;
+}
+
+
+bool getManualLog(const log_t* elog){
+  
+  return elog->manual;
 }
 
 bool getBut1Log(const log_t* elog){
@@ -157,9 +177,3 @@ bool getChangesFlagLog(const log_t* elog){
   
   return elog->changes;
 }
-
-
-
-
-
-
