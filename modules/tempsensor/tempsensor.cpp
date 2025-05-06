@@ -38,8 +38,10 @@ void initSensor(dht11_t* sensor, PinName pin) {
 
 void updateSensor(log_t* sensorlog, dht11_t* sensor1){
 
-  if(!dht11Read(sensor1))
+  if(false == dht11Read(sensor1)){
     return;
+  }
+
 
   updateTempLog(sensorlog, getSensorTemp(sensor1));
   updateHumLog(sensorlog, getSensorHum(sensor1));
@@ -47,16 +49,15 @@ void updateSensor(log_t* sensorlog, dht11_t* sensor1){
   return;
     
 }
-// Send start signal: pull line low for 18 ms, then high
 
 //=====[Implementations of private functions]==================================
 
 static void sendStartSignal(dht11_t* sensor){
   sensor->data->output();
   sensor->data->write(0);
-  wait_us(18000); // 18 ms
+  wait_us(18000); 
   sensor->data->write(1);
-  wait_us(30);    // Wait for DHT11 response
+  wait_us(30);  
   sensor->data->input();
   return;
 }
@@ -86,7 +87,7 @@ static bool waitForResponse(dht11_t* sensor){
   return true;
 }
 
-// Read a single bit by sampling after 40 µs
+
 static bool readBit(dht11_t* sensor){
   int count = 0;
   while (sensor->data->read() == 0){
@@ -94,11 +95,11 @@ static bool readBit(dht11_t* sensor){
     if (++count > 100) return false;
   }
 
-  wait_us(40); // Wait before sampling
+  wait_us(40); 
   return sensor->data->read() == 1;
 }
 
-// Read a full byte (8 bits)
+
 static uint8_t readByte(dht11_t* sensor){
   uint8_t result = 0;
   for (int i = 0; i < 8; i++){
@@ -122,8 +123,10 @@ static bool dht11Read(dht11_t* sensor){
   uint8_t checksum = data[0] + data[1] + data[2] + data[3];
   if (checksum != data[4]) return false;
 
-  sensor->humidity = data[0];
-  sensor->temperature = data[2];
+  sensor->humidity = (int) data[0];
+  sensor->temperature = (int) data[2];
+
+
   return true;
 }
 
@@ -134,4 +137,3 @@ static int getSensorTemp(dht11_t* sensor){
 static int getSensorHum(dht11_t* sensor){
   return sensor->humidity;
 }
-
