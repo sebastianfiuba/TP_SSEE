@@ -1,11 +1,35 @@
-# TP_03
-Título: Cerradura controlada a distancia, por temperatura y humedad. 
+# TP_FINAL
+
+Título: Control de exposicion a radiacion. 
 
 Alumno: Sebastián Andrada
 
-Objetivo: Desarrollar un sistema que controle una cerradura segun una distancia medida, temperatura, humedad y una interfaz de usuario de software y fisica.
+Objetivo: Desarrollar un sistema que controle la temperatura, humedad y el angulo de exposicion de un objeto usando una interfaz de usuario de software y fisica.
 
 Descripción: 
+
+El sistema debe controlar a que tanta radiacion esta expuesto un dispositivo sin tocarlo (sin necesariamente medir la radiacion) y a cuanta temperatura y humedad esta expuesto. 
+
+Para hacerlo se propone, como minimo, tres proyectos que cumplan el objetivo, sean realizables y se diferencien por los siguientes criterios:
+
+-Dificultad. (Que tan dificil es realizar el proyecto).
+-Practicidad. (Que tanto sirve el proyecto).
+-Interes. (Que tanto me intereza el proyecto).
+-Automatizacion. (Que tanto se puede automatizar).
+-Costo (Que tantos recursos me costaria realizarlo).
+
+El primer proyecto posible es un sistema al cual se le ingrese la tasa de radiacion de la fuente, la distancia a la que esta del objeto a irradiar, la temperatura y la humedad objetivo, la cantidad de radiacion que se busque obtener y la velocidad de absorcion (angulo de exposicion a la fuente), cada valor tendria su forma paralela e individual de configurarlo. Todos estos valores se pueden mostrar y se podrian cambiar por la interfaz fisica y por la virtual.
+
+Este proyecto es el más automatico, más practico, el que más me interesa pero a su vez es el que más cuesta y el más dificil de hacer.
+
+El segundo proyecto es un sistema al cual se le ingrese la tasa, la distancia, la temperatura minima objetivo, la humedad minima objetivo y la radiacion absorbida minima/objetivo. Estos valores se pueden configurar individualmente de forma virtual y fisica, pero de esta ultima no de forma paralela. La cantidad de radiacion que se absorbe debe ser controlada por el usuario manualmente. Los datos se muestran completamente por software (menos la radiacion que es una estimacion). Fisicamente, solamente se muestra cuando se esta fuera del rango.
+
+Este proyecto es un punto medio de todo y me interesa casi lo mismo con el primero.
+
+El tercer proyecto es un sistema al cual se le puede configurar la tasa, la distancia, una temperatura minima, la radiacion absorbida minima y si esta en el rango de irradiacion o no. La humedad, la temperatura y la cantidad de radiacion absorbida (estimada).
+
+Este proyecto es el que menos me cuesta, el más facil y es el que más bajo puntua en el resto.
+
 
 El sistema debe controlar una ceradura midiendo a que distancia se enecuentra el objetivo, la temperatura y la humedad de donde se encuentre, cuando el sistema detecte que la distancia medida es menor a la configurada, la temperatura pasa cierto umbral definido por el usuario, baja de una temperatura fija minima o aumenta la humedad de un valor fijo maximo se abre la cerradura. Si esta dentro de los rangos se cierra. Para ello, se define con dos #define el valor maximo de humedad y la temeperatura minima. Se usan grados Celsius y centimetros.
 El usuario puede abrir la cerradura independientemente de las concidiones pero solo puede cerrarla ignorando lo medido de forma fisica. Cuando se da el comando de abrir unicamente el comando de cerrar (ambos fisico o remoto) puede anular la orden. El sistema prioriza abrir la cerradura. El sistema puede ser configurado para mostrar la hora actual, aunque en esta etapa no es un requerimieto.
