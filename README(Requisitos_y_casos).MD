@@ -4,9 +4,9 @@ Alumno: Sebastián Andrada
 
 Objetivo: Desarrollar un sistema que controle la temperatura, humedad y el angulo de exposicion de un objeto usando una interfaz de usuario de software y fisica.
 
-Descripción: 
+Descripción inicial: 
 
-El sistema debe controlar a que tanta radiacion esta expuesto un dispositivo sin tocarlo (sin necesariamente medir la radiacion) y a cuanta temperatura y humedad esta expuesto. 
+El sistema debe controlar a que tanta radiacion esta expuesto un dispositivo sin tocarlo (sin necesariamente medir la radiacion), su temperatura minima y la humedad maxima de su entorno. 
 
 1 Seleccion del proyecto:
 -
