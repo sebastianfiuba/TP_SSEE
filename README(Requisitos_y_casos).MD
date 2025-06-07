@@ -1,4 +1,4 @@
-#Título: Sistema de control de dosis de radiacion. 
+Título: Sistema de control de dosis de radiacion. 
 
 Alumno: Sebastián Andrada
 
@@ -9,7 +9,7 @@ Descripción inicial:
 El sistema debe controlar a que tanta radiacion esta expuesto un dispositivo sin tocarlo (sin necesariamente medir la radiacion), su temperatura minima y la humedad maxima de su entorno. 
 
 1. Seleccion del proyecto:
-
+-
 
 1.1 Criterios de seleccion:
 -
@@ -46,18 +46,23 @@ Para hacerlo se propone, como minimo, tres proyectos que cumplan el objetivo, se
 </table>
 
 1.2 Posibles proyectos:
-
+-
 1.2.1 Proyecto Nro 1:
+-
+
 El primer proyecto posible es un sistema al cual se le ingrese la tasa de radiacion de la fuente, la distancia a la que se mide la tasa, la distancia a la que esta del objeto a irradiar, la temperatura y la humedad objetivo, la cantidad de radiacion que se busque obtener y a que velocidad se obtiene, cada valor tendria su forma paralela e individual de configurarlo. Todos estos valores se pueden mostrar y se podrian cambiar por la interfaz fisica y por la virtual. 
 
 Este proyecto es el más automatico, más practico, el que más me interesa pero a su vez es el que más cuesta y el más dificil de hacer, su dificultad se incrementa mucho cuando se pide la velocidad ya que habría que tomar en cuenta muchas variables extras y hacer una realimentacion para ver en que parte de la curva de decaimiento se encuentra, ahí se debe linealizar cambiando el grado de exposición. El costo también incrementa ya que es necesario un dosimetro. 
 
 1.2.2 Proyecto Nro 2:
+-
+
 El segundo proyecto es un sistema al cual se le ingrese la tasa, la distancia a la que se mide la tasa, la distancia del objeto a la fuente, la temperatura minima objetivo, la humedad minima objetivo y la radiacion absorbida minima/objetivo. Estos valores se pueden configurar individualmente de forma virtual y fisica, pero de esta ultima no de forma paralela. La cantidad de radiacion que se absorbe debe ser controlada por el usuario manualmente. Los datos se muestran completamente por software (menos la radiacion que es una estimacion). Fisicamente, solamente se muestra cuando se esta fuera del rango.
 
 Este proyecto es un punto medio de dificultad y costo y me interesa casi lo mismo con el primero.
 
 1.2.3 Proyecto Nro 3:
+-
 
 El tercer proyecto es un sistema al cual se le puede configurar la tasa, la distancia a la que se mide la tasa, la distancia del objeto a la fuente, una temperatura minima, la radiacion absorbida minima y si esta en el rango de irradiacion o no. La humedad, la temperatura y la cantidad de radiacion absorbida (estimada).
 
@@ -112,6 +117,7 @@ Los puntajes en los criterios de los proyectos son los siguientes
 Selecciono el segundo proyecto por que pienso que tiene el mayor puntaje y el mejor costo/beneficio de los tres. 
 
 1.4 Descripcion detallada del proyecto elegido:
+-
 
 El proyecto se iniciará en un modo configuración, en el mismo se podrá seleccionar que modulo se quiere configurar. Las opciones de cada modulo son: Activado, Valor máximo, Desactivado. Si se selecciona el sistema se podrá seleccionar entre 
 activo, configuración, apagado.
@@ -119,11 +125,13 @@ El dispositivo Bluetooth se podrá enlazar solamente si se activa el modulo y se
 Todos los datos se podrán ver por la aplicación y el puerto serie.
 
 2 Elcitación de requisitos y casos de uso:
+-
 
 Hay muchos mercados para este tipo de sistemas pero la aplicación de este en particular es la investigación. Se está buscando tener un ambiente controlado para irradiar un dispositivo y a su vez medir los efectos del mismo. Si el proyecto uno se hubiera seleccionado el proyecto uno el análisis de estos efectos se podría hacer en el mismo sistema. También se podrian hacer caracterizaciones de dosimetros.
 Este sistema respondería a una necesidad en particular y por lo tanto no tendría una competencia directa. Sin embargo, los dispositivo que se usan comercialmente son más sofisticados y tienen otros estándares por lo que el costo aumentaría mucho más.
 
 2.1 Tabal de requisitos:
+-
 
 | Sección                     | Descripción                                                                 |
 |----------------------------|------------------------------------------------------------------------------|
@@ -153,7 +161,9 @@ Este sistema respondería a una necesidad en particular y por lo tanto no tendr�
 |                | El sistema contará con un botón para cambiar el estado de lo seleccionado. |
 
 2.2 Casos de aplicacion:
+-
 2.2.1 Caso 1:
+-
 | Elemento              | Definicion                                                                 |
 |----------------------|-------------------------------------------------------------------------|
 | Disparador           | El usuario quiere controlar el grado de exposición del sistema manualmente y controlar lo demás de forma automática. |
@@ -168,6 +178,7 @@ Este sistema respondería a una necesidad en particular y por lo tanto no tendr�
 |     | (1,2) Cuando se llegue a la dosis absorbida configurada se cambia el grado de exposición a 0. |
 
 2.2.2 Caso 2:
+-
 
 | Elemento              | Definicion                                                                 |
 |----------------------|-------------------------------------------------------------------------|
@@ -180,6 +191,7 @@ Este sistema respondería a una necesidad en particular y por lo tanto no tendr�
 |     | Cuando se llegue a la dosis absorbida configurada se cambia el grado de exposición a 0. |
 
 2.2.3 Caso 3:
+-
 
 | Elemento              | Definicion                                                                 |
 |----------------------|-------------------------------------------------------------------------|
