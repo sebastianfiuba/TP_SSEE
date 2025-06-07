@@ -1,4 +1,4 @@
-# TP_FINAL
+# TP_04
 
 Título: Control de exposicion a radiacion. 
 
@@ -10,6 +10,12 @@ Descripción:
 
 El sistema debe controlar a que tanta radiacion esta expuesto un dispositivo sin tocarlo (sin necesariamente medir la radiacion) y a cuanta temperatura y humedad esta expuesto. 
 
+1 Seleccion del proyecto:
+-
+
+1.1 Criterios de seleccion:
+-
+
 Para hacerlo se propone, como minimo, tres proyectos que cumplan el objetivo, sean realizables y se diferencien por los siguientes criterios:
 
 -Dificultad. (Que tan dificil es realizar el proyecto).
@@ -18,6 +24,8 @@ Para hacerlo se propone, como minimo, tres proyectos que cumplan el objetivo, se
 -Automatizacion. (Que tanto se puede automatizar).
 -Costo (Que tantos recursos me costaria realizarlo).
 
+1.2 Posibles proyectos:
+-
 El primer proyecto posible es un sistema al cual se le ingrese la tasa de radiacion de la fuente, la distancia a la que esta del objeto a irradiar, la temperatura y la humedad objetivo, la cantidad de radiacion que se busque obtener y la velocidad de absorcion (angulo de exposicion a la fuente), cada valor tendria su forma paralela e individual de configurarlo. Todos estos valores se pueden mostrar y se podrian cambiar por la interfaz fisica y por la virtual.
 
 Este proyecto es el más automatico, más practico, el que más me interesa pero a su vez es el que más cuesta y el más dificil de hacer.
@@ -30,6 +38,83 @@ El tercer proyecto es un sistema al cual se le puede configurar la tasa, la dist
 
 Este proyecto es el que menos me cuesta, el más facil y es el que más bajo puntua en el resto.
 
+1.3 Seleccion del proyecto:
+-
+
+Selecciono el segundo proyecto por que pienso que tiene el mejor costo/beneficio de los tres. 
+
+1.4 Descripcion detallada del proyecto elegido:
+-
+
+
+
+2 Elcitación de requisitos y casos de uso:
+-
+
+Requisitos:
+1. Exposición:
+El sistema controlará la exposición a la fuente mediante un servo motor
+
+2. Control de exposición:
+
+El sistema controlará el grado de exposición con la distancia al sensor, si se selecciona este método. 
+
+3. Temperatura:
+El sistema controlará que la temperatura sea mayor que la pedida con un cooler apuntado hacia el sistema y una resistencia calefactora.
+
+4. Humedad 
+El sistema controlará que la humedad sea menor a la seleccionada con un cooler apuntando en contra del sistema.
+
+5. Indicadores:
+El sistema contará con indicadores para mostrar que se está configurando 
+El sistema contará con indicadores para mostrar si  esta dentro de los rangos
+6. Motor
+El sistema contará con un motor para cambiar el grado de exposición
+7. Calentar
+El sistema contará con una resistencia calefctora para calentar.
+8. Coolers
+El sistema contará con un cooler apuntando al sistema para mandar el aire caliente.
+El sistema contará con un cooler apuntando en contra al sistema para que funcione como extractor.
+Ambos coolers no podrán funcionar al mismo tiempo.
+9. Comunicación Bluetooth:
+El sistema se conectara a un celular mediante Bluetooth.
+El celular podrá enviar comandos y recibir información.
+El sistema mandara la información pedida y seguira los comando recibidos.
+Cada vez que haya un cambio se mandara una actualización al celular.
+10. Comunicación serie:
+El sistema recibirá comandos y manda información por un puerto serie.
+11. Aplicación:
+La aplicación mostrará una curva estimada de radiacion absorbida.
+La aplicación mostrará la tasa efectiva 
+La aplicación mostrará todos los valores medios y configurados
+La aplicación servirá para configurar cada aspecto posible del sistema.
+12. Sensores:
+El sistema contará con un sensor de distancia para la interfaz de usuario
+El sistema contará con un sensor de temperatura y humedad
+13. Botones:
+El sistema contará con 2 botones para cambiar que se configura y otro botón para cambiar el estado de lo seleccionado
+
+
+Caso 1:
+Disparador:
+El usuario quiere controlar el grado de exposicion del sistema manualmente y controlar lo demás de forma automatica
+Caso 2:
+Disparador:
+El usuario quiere solamente ingresar los valores del sistema y que todo funcione solo.
+Caso 3:
+Disparador:
+El usuario quiere controlar solamente un aspecto del sistema.
+
+
+Mercado y requisitos:
+Caso de uso 1:
+El usuario controla todo de forma fisica.
+
+Caso de uso 2:
+El usuario controla todo de forma virtual.
+
+Caso de uso 3:
+Se controlan solamente variables seleccionadas.
 
 El sistema debe controlar una ceradura midiendo a que distancia se enecuentra el objetivo, la temperatura y la humedad de donde se encuentre, cuando el sistema detecte que la distancia medida es menor a la configurada, la temperatura pasa cierto umbral definido por el usuario, baja de una temperatura fija minima o aumenta la humedad de un valor fijo maximo se abre la cerradura. Si esta dentro de los rangos se cierra. Para ello, se define con dos #define el valor maximo de humedad y la temeperatura minima. Se usan grados Celsius y centimetros.
 El usuario puede abrir la cerradura independientemente de las concidiones pero solo puede cerrarla ignorando lo medido de forma fisica. Cuando se da el comando de abrir unicamente el comando de cerrar (ambos fisico o remoto) puede anular la orden. El sistema prioriza abrir la cerradura. El sistema puede ser configurado para mostrar la hora actual, aunque en esta etapa no es un requerimieto.
