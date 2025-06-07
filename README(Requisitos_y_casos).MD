@@ -107,15 +107,15 @@ Los puntajes en los criterios de los proyectos son los siguientes
 
 Selecciono el segundo proyecto por que pienso que tiene el mayor puntaje y el mejor costo/beneficio de los tres. 
 
-1.4 Descripcion detallada del proyecto elegido:
+**1.4 Descripcion detallada del proyecto elegido:
 
 
 
 
-2 Elcitación de requisitos y casos de uso:
--
+***2 Elcitación de requisitos y casos de uso:
 
-Requisitos:
+
+** 2.1 Tabal de requisitos:
 
 | Sección                     | Descripción                                                                 |
 |----------------------------|------------------------------------------------------------------------------|
@@ -144,6 +144,8 @@ Requisitos:
 | 13. Botones                | El sistema contará con dos botones para cambiar qué se configura. |
 |                | El sistema contará con un botón para cambiar el estado de lo seleccionado. |
 
+**2.2 Casos de aplicacion:
+** 2.2.1 Caso 1:
 | Elemento              | Definicion                                                                 |
 |----------------------|-------------------------------------------------------------------------|
 | Disparador           | El usuario quiere controlar el grado de exposición del sistema manualmente y controlar lo demás de forma automática. |
@@ -157,7 +159,7 @@ Requisitos:
 |     | (2) Se apaga el módulo de distancia y se configura el grado de exposición de forma remota. |
 |     | (1,2) Cuando se llegue a la dosis absorbida configurada se cambia el grado de exposición a 0. |
 
-
+** 2.2.2 Caso 2:
 | Elemento              | Definicion                                                                 |
 |----------------------|-------------------------------------------------------------------------|
 | Disparador           | El usuario quiere solamente ingresar los datos iniciales o objetivos del sistema de forma remota y que todo funcione solo. |
@@ -168,8 +170,8 @@ Requisitos:
 |    | Se pulsa el botón de enter sin cambiar de selección.                   |
 |     | Cuando se llegue a la dosis absorbida configurada se cambia el grado de exposición a 0. |
 
-
-| Sección              | Detalle                                                                 |
+**2.2.3 Caso 3:
+| Elemento              | Definicion                                                                 |
 |----------------------|-------------------------------------------------------------------------|
 | Disparador           | El usuario quiere controlar aspectos del sistema de forma aislada.      |
 | Precondiciones       | El sistema está conectado a Bluetooth, las conexiones físicas están correctamente conectadas. |
