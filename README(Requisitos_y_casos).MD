@@ -22,6 +22,29 @@ Para hacerlo se propone, como minimo, tres proyectos que cumplan el objetivo, se
 -Automatizacion. (Que tanto se puede automatizar).
 -Costo (Que tantos recursos me costaria realizarlo).
 
+<table>
+  <thead>
+    <tr>
+      <th>Criterios</th>
+      <th>Dificultad</th>
+      <th>Practicidad</th>
+      <th>Interés</th>
+      <th>Automatización</th>
+      <th>Costo</th>
+    </tr>
+  </thead>
+<tbody>
+    <tr>
+      <td>Puntaje maximo</td>
+      <td>5</td>
+      <td>5</td>
+      <td>10</td>
+      <td>5</td>
+      <td>10</td>
+    </tr>
+ </tbody>
+</table>
+
 1.2 Posibles proyectos:
 -
 El primer proyecto posible es un sistema al cual se le ingrese la tasa de radiacion de la fuente, la distancia a la que se mide la tasa, la distancia a la que esta del objeto a irradiar, la temperatura y la humedad objetivo, la cantidad de radiacion que se busque obtener y la tasa efectiva de absorcion (grado de exposicion a la fuente), cada valor tendria su forma paralela e individual de configurarlo. Todos estos valores se pueden mostrar y se podrian cambiar por la interfaz fisica y por la virtual.
