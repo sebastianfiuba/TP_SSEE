@@ -9,7 +9,7 @@ Descripción inicial:
 El sistema debe controlar a que tanta radiacion esta expuesto un dispositivo sin tocarlo (sin necesariamente medir la radiacion), su temperatura minima y la humedad maxima de su entorno. 
 
 1. Seleccion del proyecto:
--
+
 
 1.1 Criterios de seleccion:
 -
