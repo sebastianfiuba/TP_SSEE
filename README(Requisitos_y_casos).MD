@@ -1,4 +1,4 @@
-Título: Control de control de dosis de radiacion. 
+Título: Sistema de control de dosis de radiacion. 
 
 Alumno: Sebastián Andrada
 
@@ -141,51 +141,42 @@ Requisitos:
 |              | La aplicación servirá para configurar cada aspecto posible del sistema.    |
 | 12. Sensores               | El sistema contará con un sensor de distancia para la interfaz de usuario. |
 |                | El sistema contará con un sensor de temperatura y humedad.                 |
-| 13. Botones                | El sistema contará con dos botones para cambiar qué se configura, y un botón para cambiar el estado de lo seleccionado. |
+| 13. Botones                | El sistema contará con dos botones para cambiar qué se configura. |
 |                | El sistema contará con un botón para cambiar el estado de lo seleccionado. |
 
+| Elemento              | Definicion                                                                 |
+|----------------------|-------------------------------------------------------------------------|
+| Disparador           | El usuario quiere controlar el grado de exposición del sistema manualmente y controlar lo demás de forma automática. |
+| Precondiciones       | El sistema está conectado a Bluetooth, las conexiones físicas están correctamente conectadas. |
+| Flujo principal      | Se inicia en modo configuración.                                        |
+|       | Se configura cada módulo por separado.                                  |
+|       | Se cambia a modo funcionamiento.                                        |
+|       | Se usa el sensor de distancia para variar el grado de exposición a la fuente. |
+|       | Cuando se llegue a la dosis absorbida configurada se cambia el grado de exposición a 0. |
+| Flujo alternativo    | (1) Se configura todo por el puerto serie por Bluetooth con el módulo de distancia activado. |
+|     | (2) Se apaga el módulo de distancia y se configura el grado de exposición de forma remota. |
+|     | (1,2) Cuando se llegue a la dosis absorbida configurada se cambia el grado de exposición a 0. |
 
 
-Caso 1:
-Disparador:
-El usuario quiere controlar el grado de exposicion del sistema manualmente y controlar lo demás de forma automatica.
-Precondiciones:
-EL sistema esta conectado a bluetooth, las conexiones fisicas estan correctamente conectadas.
-Flujo principal:
--Se inicia en modo configuracion.
--Se configura cada modulo por separado.
--Se cambia a modo funcionamiento.
--Se usa el sensor de distancia para variar el grado de exposicion a la fuente.
--Cuando se llegue a la dosis absoribda configurada se cambia el grado de exposicion a 0.
-Flujo alternativo:
-1-Se configura todo por el puerto serie por bluetooth con el modulo de distancio activado.
-2-Se apaga el modulo de distancia y se configura el grado de exposicion de forma remota.
--Cuando se llegue a la dosis absoribda configurada se cambia el grado de exposicion a 0.
+| Elemento              | Definicion                                                                 |
+|----------------------|-------------------------------------------------------------------------|
+| Disparador           | El usuario quiere solamente ingresar los datos iniciales o objetivos del sistema de forma remota y que todo funcione solo. |
+| Precondiciones       | El sistema está conectado a Bluetooth, las conexiones físicas están correctamente conectadas y los datos iniciales u objetivos están cargados de forma remota. |
+| Flujo principal      | Después de cargarse los datos se cambia el modo del sistema a funcionamiento por el puerto serie o la conexión Bluetooth. |
+|       | Cuando se llegue a la dosis absorbida configurada se cambia el grado de exposición a 0. |
+| Flujo alternativo    | Se inicia en modo configuración.                                       |
+|    | Se pulsa el botón de enter sin cambiar de selección.                   |
+|     | Cuando se llegue a la dosis absorbida configurada se cambia el grado de exposición a 0. |
 
 
-Caso 2:
-Disparador:
-El usuario quiere solamente ingresar los datos iniciales o objetivos del sistema de forma remota y que todo funcione solo.
-Precondiciones:
-EL sistema esta conectado a bluetooth, las conexiones fisicas estan correctamente conectadas y los datos inciales o objetivos estan cargados de forma remota.
-Flujo principal:
--Después de cargarse los datos se cambia el modo del sistema a funcionamiento por el puerto serie o la conexion bluetooth.
--Cuando se llegue a la dosis absoribda configurada se cambia el grado de exposicion a 0.
-Flujo alternativo:
--Se inicia en modo configuracion.
--Se pulsa el boton de enter sin cambiar de seleccion
--Cuando se llegue a la dosis absoribda configurada se cambia el grado de exposicion a 0.
+| Sección              | Detalle                                                                 |
+|----------------------|-------------------------------------------------------------------------|
+| Disparador           | El usuario quiere controlar aspectos del sistema de forma aislada.      |
+| Precondiciones       | El sistema está conectado a Bluetooth, las conexiones físicas están correctamente conectadas. |
+| Flujo principal      | Se inicia el sistema en modo configuración.                             |
+|       | Se apagan los módulos que no se necesiten.                              |
+|       | Se configura el/los módulos que se usen.                                |
+|       | Cuando se llegue a la dosis absorbida configurada se cambia el grado de exposición a 0. |
+| Flujo alternativo    | Con la aplicación o por la computadora se modifica todo.                |
+|     | Cuando se llegue a la dosis absorbida configurada se cambia el grado de exposición a 0. |
 
-Caso 3:
-Disparador:
-El usuario quiere controlar aspectos del sistema de forma aislada.
-Precondiciones:
-EL sistema esta conectado a bluetooth, las conexiones fisicas estan correctamente conectadas.
-Flujo principal:
--Se inicia el sistema en modo configuracion
--Se apagan los modulos que no se necesiten
--Se configura el/los modulos que se usen.
--Cuando se llegue a la dosis absoribda configurada se cambia el grado de exposicion a 0.
-Flujo alternarivo:
--Con la aplicacion o por la computadora se modifica todo.
--Cuando se llegue a la dosis absoribda configurada se cambia el grado de exposicion a 0.
