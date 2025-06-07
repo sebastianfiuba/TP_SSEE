@@ -61,11 +61,54 @@ Este proyecto es el que menos me cuesta, el más facil y es el que más bajo pun
 
 1.3 Seleccion del proyecto:
 -
+Los puntajes en los criterios de los proyectos son los siguientes
+<table>
+  <thead>
+    <tr>
+      <th>Proyecto</th>
+      <th>Dificultad</th>
+      <th>Practicidad</th>
+      <th>Interés</th>
+      <th>Automatización</th>
+      <th>Costo</th>
+      <th>Total</th>
+    </tr>
+  </thead>
+<tbody>
+    <tr>
+      <td>Proyecto 1</td>
+      <td>5</td>
+      <td>5</td>
+      <td>10</td>
+      <td>5</td>
+      <td>10</td>
+      <td>10</td>
+    </tr>
+    <tr>
+      <td>Proyecto 2</td>
+      <td>5</td>
+      <td>5</td>
+      <td>10</td>
+      <td>5</td>
+      <td>10</td>
+      <td>10</td>
+    </tr>
+    <tr>
+      <td>Proyecto 3</td>
+      <td>5</td>
+      <td>5</td>
+      <td>10</td>
+      <td>5</td>
+      <td>10</td>
+      <td>10</td>
+    </tr>
+ </tbody>
+</table>
 
-Selecciono el segundo proyecto por que pienso que tiene el mejor costo/beneficio de los tres. 
+Selecciono el segundo proyecto por que pienso que tiene el mayor puntaje y el mejor costo/beneficio de los tres. 
 
 1.4 Descripcion detallada del proyecto elegido:
--
+
 
 
 
@@ -73,47 +116,34 @@ Selecciono el segundo proyecto por que pienso que tiene el mejor costo/beneficio
 -
 
 Requisitos:
-1. Exposición:
-El sistema controlará la exposición a la fuente mediante un servo motor
 
-2. Control de exposición:
+| Sección                     | Descripción                                                                 |
+|----------------------------|------------------------------------------------------------------------------|
+| 1. Exposición              | El sistema controlará la exposición a la fuente mediante un servo motor.    |
+| 2. Control de exposición   | El sistema controlará el grado de exposición con la distancia al sensor, si se selecciona este método. |
+| 3. Temperatura             | El sistema controlará que la temperatura sea mayor que la pedida con un cooler apuntado hacia el sistema y una resistencia calefactora. |
+| 4. Humedad                 | El sistema controlará que la humedad sea menor a la seleccionada con un cooler apuntando en contra del sistema. |
+| 5. Indicadores             | El sistema contará con indicadores para mostrar que se está configurando.   |
+|              | El sistema contará con indicadores para mostrar si está dentro de los rangos. |
+| 6. Motor                   | El sistema contará con un motor para cambiar el grado de exposición.        |
+| 7. Calentar                | El sistema contará con una resistencia calefactora para calentar.           |
+| 8. Coolers                 | El sistema contará con un cooler apuntando al sistema para mandar el aire caliente. |
+|                 | El sistema contará con un cooler apuntando en contra al sistema para que funcione como extractor. |
+|                 | Ambos coolers no podrán funcionar al mismo tiempo.                          |
+| 9. Comunicación Bluetooth  | El sistema se conectará a un celular mediante Bluetooth.                    |
+|   | El celular podrá enviar comandos y recibir información.                     |
+|   | El sistema mandará la información pedida y seguirá los comandos recibidos. |
+|   | Cada vez que haya un cambio se mandará una actualización al celular.       |
+| 10. Comunicación serie     | El sistema recibirá comandos y mandará información por un puerto serie.     |
+| 11. Aplicación             | La aplicación mostrará una estimación de la radiación absorbida.           |
+|              | La aplicación mostrará la tasa efectiva.                                    |
+|              | La aplicación mostrará todos los valores medios y configurados.            |
+|              | La aplicación servirá para configurar cada aspecto posible del sistema.    |
+| 12. Sensores               | El sistema contará con un sensor de distancia para la interfaz de usuario. |
+|                | El sistema contará con un sensor de temperatura y humedad.                 |
+| 13. Botones                | El sistema contará con dos botones para cambiar qué se configura, y un botón para cambiar el estado de lo seleccionado. |
+|                | El sistema contará con un botón para cambiar el estado de lo seleccionado. |
 
-El sistema controlará el grado de exposición con la distancia al sensor, si se selecciona este método. 
-
-3. Temperatura:
-El sistema controlará que la temperatura sea mayor que la pedida con un cooler apuntado hacia el sistema y una resistencia calefactora.
-
-4. Humedad 
-El sistema controlará que la humedad sea menor a la seleccionada con un cooler apuntando en contra del sistema.
-
-5. Indicadores:
-El sistema contará con indicadores para mostrar que se está configurando 
-El sistema contará con indicadores para mostrar si  esta dentro de los rangos
-6. Motor
-El sistema contará con un motor para cambiar el grado de exposición
-7. Calentar
-El sistema contará con una resistencia calefctora para calentar.
-8. Coolers
-El sistema contará con un cooler apuntando al sistema para mandar el aire caliente.
-El sistema contará con un cooler apuntando en contra al sistema para que funcione como extractor.
-Ambos coolers no podrán funcionar al mismo tiempo.
-9. Comunicación Bluetooth:
-El sistema se conectara a un celular mediante Bluetooth.
-El celular podrá enviar comandos y recibir información.
-El sistema mandara la información pedida y seguira los comando recibidos.
-Cada vez que haya un cambio se mandara una actualización al celular.
-10. Comunicación serie:
-El sistema recibirá comandos y manda información por un puerto serie.
-11. Aplicación:
-La aplicación mostrará un estimacion de la radiacion absorbida. 
-La aplicación mostrará la tasa efectiva 
-La aplicación mostrará todos los valores medios y configurados
-La aplicación servirá para configurar cada aspecto posible del sistema.
-12. Sensores:
-El sistema contará con un sensor de distancia para la interfaz de usuario
-El sistema contará con un sensor de temperatura y humedad
-13. Botones:
-El sistema contará con dos botones para cambiar que se configura, un botón para cambiar el estado de lo seleccionado.
 
 
 Caso 1:
