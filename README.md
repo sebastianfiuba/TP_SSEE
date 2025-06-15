@@ -1,5 +1,5 @@
 # TP_03
-Título: Cerradura controlada a distancia, por temperatura y humedad. 
+Título: Cerradura controlada por temperatura, humedad y aproximación. 
 
 Alumno: Sebastián Andrada
 
@@ -24,6 +24,7 @@ El estado de la cerradura se muestra con dos leds, uno se prende si esta abierta
 La distancia se mide con el sensor hc-sr04 que se puede encontrar aca:
 https://articulo.mercadolibre.com.ar/MLA-1394992860-arduino-hc-sr04-modulo-sensor-ultrasonico-5v-_JM?highlight=false&headerTopBrand=false#polycard_client=search-nordic&position=12&search_layout=grid&type=item&tracking_id=67394c92-79ac-4f1e-9bd5-6a61412d43d0&wid=MLA1394992860&sid=search
 
+Se agrega esta funcionalidad por el uso del sensor en la etapa siguiente.
 Este sensor funcioa usando dos lineas con un protocolo de comunicacion full-duplex real pero que practicamente es half-duplex ya que no se manda ni se recibe al mismo tiempo. Para realizar la medicion se manda una señal caracteristica como trigger y se espera su respuesta en la otra linea. Una vez que llega la misma como un 1 logico se empieza a contar el tiempo que se tarda en aparecer un 0 logico, despues usando una ecuacion se transforma el tiempo en distancia. Para esto se usan tres interrupciones, una de 100ms que se usa para empezar el ciclo del sensor y dos para cubrir los flancos ascendentes y descendentes del pin de ECHO.
 
 Si el usuario quiere cambiar la distanca minima a la que debe acercarse para abrir la cerradura debe apretar los dos botones al mismo tiempo y elegir la señal, en este caso la puerta se abrira y se prendera un led, una vez que se suelten se apagara el led y la cerradura funcionara como siempre.
@@ -31,7 +32,7 @@ Si el usuario quiere cambiar la distanca minima a la que debe acercarse para abr
 
 La cerradura se controla con un servo motor como el siguiente:
 https://www.mercadolibre.com.ar/mini-servo-tower-pro-sg90-9g-robotica-arduino-servomotor/p/MLA46735454#polycard_client=search-nordic&searchVariation=MLA46735454&wid=MLA2029850566&position=2&search_layout=stack&type=product&tracking_idws=6c7b7a13-4f65-46b4-a9e5-7da6822a7150&sid=search 
-Para controlarlo se pone un utiliza un pwm con 50Hz de frecuencia y se varia el ancho de pulso entre 1ms y 1,5ms. Estos valores equivalen a 0 y 180 grados, respectivamente. La cerradura estara abierta con el servo a 180 grados (1,5ms) y cerrada a 90 grados (1,25ms).
+Para controlarlo se utiliza un pwm con 50 Hz de frecuencia y se varía el ancho de pulso entre 1 ms y 1,5 ms. Estos valores equivalen a 0 y 180 grados, respectivamente. La cerradura estara abierta con el servo a 180 grados (1,5 ms) y cerrada a 90 grados (1,25 ms).
 
 Al principio del programa se muestran los comandos disponibles.
 - Ver el estado de la cerradura
