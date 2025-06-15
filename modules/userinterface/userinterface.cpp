@@ -4,11 +4,11 @@
 #include "arm_book_lib.h"
 
 #include "userinterface.h"
-#include "eventlog.h"
+#include "syshandler.h"
 #include "potsens.h"
 #include "ledsuser.h"
 #include "buttonsuser.h"
-
+#include "distance.h"
 
 //=====[Declaration of private defines]========================================
 
@@ -35,21 +35,31 @@
 
 void userInterfaceInit(){
 
-  initUserLeds();
   initButtons();
+  initUserLeds();
+  initDistance();
 
   return;
   
 }
 
-void userInterfaceUpdate(log_t* loginter){
+void userInterfaceUpdate(sys_t* sys_a){
   
-  updateButtons(loginter);
-  updateUserleds(loginter);
-  updateSens(loginter);
+  updateButtons(sys_a);
+  updateSens(sys_a);
+  updateDistance(sys_a);
+  updateUserleds(sys_a);
 
   return;
 
 }
 
 //=====[Implementations of private functions]==================================
+
+
+
+
+
+
+
+

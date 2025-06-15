@@ -4,12 +4,12 @@
 #define _LEDSUSER_H_
 
 //=====[Declaration of public defines]=========================================
-#include "eventlog.h"
+#include "syshandler.h"
 
 //=====[Declaration of public data types]======================================
 
 //=====[Declarations (prototypes) of public functions]=========================
-void updateUserleds(log_t *led);
+void updateUserleds(sys_t *sys_b);
 void initUserLeds();
 
 //=====[#include guards - end]=================================================

@@ -6,9 +6,10 @@
 
 
 #include "tempdht.h" 
-#include "tempsensor.h"
 
 
+
+#include "syshandler.h"
 #include "eventlog.h"
 
 #include "buttonsuser.h"
@@ -23,13 +24,14 @@
 
 
 //=====[Declaration of private defines]========================================
-#define DHTPIN D4
+
 //=====[Declaration of private data types]=====================================
 
 //=====[Declaration and initialization of public global objects]===============
 
 //=====[Declaration of external public global variables]=======================
-log_t sys;
+log_t syslog;
+sys_t sys;
 //dht11_t ths;
 //=====[Declaration and initialization of public global variables]=============
 
@@ -42,22 +44,20 @@ log_t sys;
 void  locksysInit(){
 
   userInterfaceInit();
-  initLog(&sys);
+  initSysH(&sys);
+  initLog(&sys, &syslog);
   initLock();
- // initSensor(&ths, DHTPIN);
   pcSerialComInit();
 }
 
 void locksysUpdate(){
 
   userInterfaceUpdate(&sys);
-  //updateSensor(&sys, &ths);
-  
   updateSensorDHT(&sys);
   updateLock(&sys);
   userInterfaceUpdate(&sys);
-  pcSerialComUpdate(&sys);
-  
+  pcSerialComUpdate(&sys, &syslog);
+
   delay(SYSTEM_TIME_INCREMENT_MS);
 
 }
