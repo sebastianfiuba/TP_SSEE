@@ -1,6 +1,8 @@
 Título: Sistema de control de dosis de radiación. 
+-
 
 Alumno: Sebastián Andrada
+-
 
 
 Metodo de control:
