@@ -1,7 +1,7 @@
-# Título: Sistema de control de dosis de radiación. 
+ Título: Sistema de control de dosis de radiación. 
 
 
-# Alumno: Sebastián Andrada
+ Alumno: Sebastián Andrada
 
 
 
