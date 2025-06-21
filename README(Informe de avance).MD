@@ -2,11 +2,14 @@ Título: Sistema de control de dosis de radiación.
 
 Alumno: Sebastián Andrada
 
+
 Metodo de control:
+-
 Para controlar el avance se propondra una nueva categoria en la tabla de requisitos llamada Avance. La misma tendra 3 posibles estados por requirimiento: Finalizado, Activo y En espera.  
 "Finalizado" significa que ya se cumplio con el requsito en el proyecto, "Activo" significa que se esta en proceso de lograr el objetivo propuesto y "En espera" significa que todavia no se empezo con en item.
-Tabla de requisitos:
 
+Tabla de requisitos:
+-
 | Sección                    | Descripción                                                                  | Avance     |
 |----------------------------|------------------------------------------------------------------------------|------------|
 | 1. Exposición              | El sistema controlará la exposición a la fuente del objetivo a irradiar mediante un servo motor.    | Activo. |
